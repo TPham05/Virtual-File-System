@@ -44,8 +44,6 @@ void run_shell(environment* env) {
             rename_vfs(env, arg1, arg2);
         } else if (strcmp(cmd, "tree") == 0) {
             tree_vfs(env, env->pwd, 0);
-        } else if (strcmp(cmd, "chmod") == 0 && arg1 && arg2) {
-            chmod_vfs(env, arg1, strtol(arg2, NULL, 8)); 
         } else if (strcmp(cmd, "cp") == 0 && arg1 && arg2) {
             cp_vfs(env, arg1, arg2);
         } else if (strcmp(cmd, "mv") == 0 && arg1 && arg2) {
@@ -53,8 +51,7 @@ void run_shell(environment* env) {
         } else if (strcmp(cmd, "save") == 0 && arg1) {
             save_vfs(env, arg1);
         } else if (strcmp(cmd, "load") == 0 && arg1) {
-            load_vfs(env, arg1);
-
+            load_vfs(env, arg1)
         } else if (strcmp(cmd, "exit") == 0) {
             break;
         } else {
